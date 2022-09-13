@@ -1,0 +1,15 @@
+{
+  "name": "listview-issue",
+  "main": "app/app.js",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@nativescript/core": "8.3.4",
+    "@nativescript/theme": "~3.0.2",
+    "nativescript-ui-listview": "14.2.0"
+  },
+  "devDependencies": {
+    "@nativescript/webpack": "~5.0.6",
+    "@nativescript/ios": "8.3.3"
+  }
+}

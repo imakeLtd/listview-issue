@@ -1,0 +1,52 @@
+<Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd"  xmlns:lv="nativescript-ui-listview">
+    <ActionBar>
+        <Label text="Home" />
+    </ActionBar>
+
+    <GridLayout rows="*" columns="*">
+        <lv:RadListView row="0" col="0" items="{{ dataItems }}" itemTemplateSelector="{{ templateSelector }}"  orientation="vertical">
+            <lv:RadListView.itemTemplate>
+                <StackLayout orientation="vertical">
+                    <Label fontSize="20" text="{{ itemName }}" margin="5"/>
+                    <Label fontSize="17" text="{{ type }}" margin="0 5 0 5"/>
+                    <Label fontSize="14" text="{{ itemDescription }}" margin="5"/>
+                </StackLayout>
+            </lv:RadListView.itemTemplate>
+
+            <lv:RadListView.itemTemplates>
+                <template key="first">
+                    <StackLayout orientation="vertical" style.backgroundColor="black">
+                        <Label fontSize="20" text="{{ itemName }}" color="yellow" margin="5"/>
+                        <Label fontSize="17" text="{{ type }}" color="yellow" margin="0 5 0 5"/>
+                        <Label fontSize="14" text="{{ itemDescription }}" color="yellow" margin="5"/>
+                    </StackLayout>
+                </template>
+                <template key="red">
+                    <StackLayout orientation="vertical" style.backgroundColor="red">
+                        <Label fontSize="20" text="{{ itemName }}" color="white" margin="5"/>
+                        <Label fontSize="17" text="{{ type }}" color="white" margin="5"/>
+                    </StackLayout>
+                </template>
+                <template key="green">
+                    <StackLayout orientation="vertical" style.backgroundColor="green">
+                        <Label fontSize="20" text="{{ itemName }}" color="white" margin="5"/>
+                        <Label fontSize="17" text="{{ type }}" color="white" margin="5"/>
+                    </StackLayout>
+                </template>
+                <template key="blue">
+                    <StackLayout orientation="vertical" style.backgroundColor="blue">
+                        <Label fontSize="20" text="{{ itemName }}" color="white" margin="5"/>
+                        <Label fontSize="17" text="{{ type }}" color="white" margin="5"/>
+                    </StackLayout>
+                </template>
+                <template key="last">
+                    <StackLayout orientation="vertical" style.backgroundColor="yellow">
+                        <Label fontSize="20" text="{{ itemName }}" color="black" margin="5"/>
+                        <Label fontSize="17" text="{{ type }}" color="black" margin="0 5 0 5"/>
+                        <Label fontSize="14" text="{{ itemDescription }}" color="black" margin="5"/>                
+                    </StackLayout>
+                </template>
+            </lv:RadListView.itemTemplates>
+        </lv:RadListView>
+    </GridLayout>
+</Page>
