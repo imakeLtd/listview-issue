@@ -7,7 +7,7 @@ export class ViewModel extends Observable {
         super();
         this.dataItems = new ObservableArray();
         this._templateSelector = this.templateSelectorFunction;
-        let itemsCount = 5;
+        let itemsCount = 8;
         for (let i = 0; i <= itemsCount; i++) {
             this.dataItems.push(new DataItem(i, "Item " + i, "This is item description", this.getType(i, itemsCount)));
         }
@@ -42,9 +42,9 @@ export class ViewModel extends Observable {
     getType(index, end) {
         let lastDigit = index % 10;
         
-        let type = index === 0 ? "first" : index === end ? "last" : 'default';
+        let type = index === 0 ? "first" : index === end ? "last" : null;
         if (!type) {
-            type = lastDigit === 0 ? "red" : lastDigit <= 3 ? "red" : lastDigit <= 6 ? "blue" : lastDigit <= 9 ? "green" : "default";
+            type = lastDigit === 0 ? "red" : lastDigit <= 2 ? "red" : lastDigit <= 4 ? "blue" : lastDigit <= 6 ? "green" : "default";
         }
 
         return type;
